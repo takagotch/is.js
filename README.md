@@ -76,6 +76,27 @@ is.all.date(new Date(), 'bar');
 is.any.date(new Date(), 'bar');
 is.all.date([new Date(), 'foo', 'bar']);
 
+var year2015 = new Date('01/26/2015');
+var year2016 = new Date('01/26/2016');
+is.year(year2015, 2015);
+is.year(year2016, 2015);
+is.not.year(year2016, 2015);
+
+is.leapYear(2016);
+is.leapYear(2015);
+is.not.leapYear(2015);
+is.all.leapYear(2015, 2016);
+is.any.leapYear(2015, 2016);
+is.all.leapYear([2016, 2080]);
+
+var monday = new Date('01/26/2015');
+var sunday = new Date('01/25/2015');
+var saturday = new Date('01/24/2015');
+is.weekend(sunday);
+is.weekend(monday);
+is.not.weekend(sunday, saturday);
+is.not.weekend(sunday, saturday, monday);
+is.all.weekend([sunday, saturday, monday]);
 
 ```
 
