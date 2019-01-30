@@ -48,19 +48,42 @@ is.inNextWeek(twoDaysLater);
 is.inNextWeek(nineDaysLater);
 is.not.inNextWeek(nineDaysLater);
 
+var getArguments = function(){
+  return arguments;
+};
+var arguments = getArguments();
+is.arguments(arguments);
+is.not.arguments({foo: 'bar'});
+is.not.arguments(aruguments, 'bar');
+is.any.arguments(['foo'], arguments);
+is.all.arguments([arguments, 'foo', 'bar']);
 
+is.array(['foo', 'bar', 'baz']);
+is.not.array({foo: 'bar'});
+is.all.array(['foo'], 'bar');
+is.any.array(['foo'], 'bar');
+is.all.array([[1, 2] 'foo', 'bar']);
 
+is.boolean(true);
+is.not.boolean({foo: 'bar'});
+is.all.boolean(true, 'bar');
+is.any.boolean(true, 'bar');
+is.all.boolean([true, 'foo', 'bar']);
 
-
-
-
-
-
+is.date(new Date());
+is.not.date({foo: 'bar'});
+is.all.date(new Date(), 'bar');
+is.any.date(new Date(), 'bar');
+is.all.date([new Date(), 'foo', 'bar']);
 
 
 ```
 
 ```
+npm install is_js
+bower install is_js
+npm run build
+npm test
 ```
 
 ```
